@@ -6,7 +6,7 @@ namespace AR.Data
 {
     public class ContextoPrincipal : DbContext
     {
-        public ContextoPrincipal(DbContextOptions options) 
+        public ContextoPrincipal(DbContextOptions options)
             : base(options)
         {
         }
