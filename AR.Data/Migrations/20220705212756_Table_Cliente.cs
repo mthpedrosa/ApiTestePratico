@@ -11,10 +11,14 @@ namespace AR.Data.Migrations
                 name: "Cliente",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
-                    Idade = table.Column<int>(type: "int", nullable: false)
+                    cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    data_nascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    sexo = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: true),
+                    ativo = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: true)
                 },
                 constraints: table =>
                 {
